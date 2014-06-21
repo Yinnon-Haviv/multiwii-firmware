@@ -440,7 +440,7 @@ void annexCode() { // this code is excetuted at each loop and won't interfere wi
   {
     static uint8_t ind = 0;
     static uint16_t rvec[RSSI_SMOOTH], rsum;
-    uint16_t r = analogRead(RX_RSSI_PIN);
+    uint16_t r = analogRead(RX_RSSI_PIN) * RX_RSSI_SCALE;
     #if RSSI_SMOOTH == 1
       analog.rssi = r;
     #else
